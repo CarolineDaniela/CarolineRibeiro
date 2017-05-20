@@ -1,0 +1,33 @@
+﻿@model IEnumerable<CarolineRibeiro.Models.Subject>
+
+<p>
+    @Html.ActionLink("Create New Subject", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SubjId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubjId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new {id=item.SubjId }) |
+            @Html.ActionLink("Details", "Details", new {id=item.SubjId}) |
+            @Html.ActionLink("Delete", "Delete", new {id=item.SubjId })
+        </td>
+    </tr>
+}
+
+</table>
